@@ -1,0 +1,11 @@
+{
+  "name": "mean_app",
+  "version": "1.0.0",
+  "description": "MongoDB, Express.js, AngularJS and Node.js app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Radosław Chełstowski",
+  "license": "ISC"
+}
