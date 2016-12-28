@@ -36,9 +36,10 @@ var CarSchema = new Schema({
         type: Date,
         default: Date.now
     },
-    equipment: {
-        type: Array
-    }
+    equipment: [{
+        type: Schema.Types.ObjectId,
+        ref: Equipment
+    }]
 });
 
 mongoose.model('Car', CarSchema);
