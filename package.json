@@ -1,11 +1,22 @@
 {
   "name": "mean_app",
   "version": "1.0.0",
-  "description": "MongoDB, Express.js, AngularJS and Node.js app",
+  "description": "Full-Stack JavaScript with MongoDB, Express, AngularJS, Node.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Radosław Chełstowski",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/miestwin/mean_app.git"
+  },
+  "dependencies": {
+    "body-parser": "~1.15.1",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "~4.13.4",
+    "morgan": "~1.7.0"
+  }
 }
