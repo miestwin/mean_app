@@ -13,4 +13,4 @@ var EquipmentSchema = new Schema({
     }
 });
 
-mongoose.model('Equipment', EquipmentSchema);
+module.exports = mongoose.model('Equipment', EquipmentSchema);
