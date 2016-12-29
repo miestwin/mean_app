@@ -37,8 +37,8 @@ var CarSchema = new Schema({
         default: Date.now
     },
     equipment: [{
-        type: Schema.Types.ObjectId,
-        ref: Equipment
+        type: Schema.Types.ObjectId
+        //ref: Equipment
     }]
 });
 

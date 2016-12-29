@@ -4,6 +4,7 @@ var mongoose = require('mongoose'),
 var EquipmentSchema = new Schema({
     name: {
         type: String,
+        unique: true,
         required: 'Name of the equipment is required'
     },
     description: {
