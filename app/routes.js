@@ -11,51 +11,83 @@ module.exports = function(app, dirname) {
         });
     });
 
-    //show car :id
-    app.get('/cars/:id', function(req, res) {
-
-    });
-
-    //create new car
-    app.post('/cars', function(req, res) {
-
-    });
-
-    //update car:id
-    app.put('/cars/:id', function(req, res) {
-
-    });
-
-    //delete car:id
-    app.delete('/cars/"id', function(req, res) {
-
-    });
-
-    //list equipments
-    app.get('/equipments', function(req, res) {
-        Equipment.find(function(err, cars) {
+    app.get('/cars', function(req, res) {
+        Car.find(function(err, cars) {
             if(err) res.send(err);
             res.json(cars);
         });
     });
 
-    //show equipment:id
-    app.get('/equipments/:id', function(req, res) {
-
+    //show car :id
+    app.get('/cars/:id', function(req, res) {
+        Car.findById(req.params.id, function(err, car) {
+            if(err) res.json(err);
+            res.json(car);
+        });
     });
 
-    app.post('/equipments', function(req, res) {
-
+    //create new car
+    app.post('/cars', function(req, res) {
+        Car.create(req.body, function(err, car) {
+            if(err) res.json(err);
+            res.json(car);
+        });
     });
 
     //update car:id
-    app.put('/equipments/:id', function(req, res) {
-
+    app.put('/cars/:id', function(req, res) {
+        Car.findByIdAndUpdate(req.params.id, req.body, function(err, car) {
+            if(err) res.json(err);
+            res.json(car);
+        });
     });
 
     //delete car:id
-    app.delete('/equipments/"id', function(req, res) {
+    app.delete('/cars/"id', function(req, res) {
+        Car.findByIdAndRemove(req.params.id, req.body, function(err, car) {
+            if(err) res.json(err);
+            res.json(car);
+        });
+    });
 
+    //list equipments
+    app.get('/equipments', function(req, res) {
+        Equipment.find(function(err, eq) {
+            if(err) res.send(err);
+            res.json(eq);
+        });
+    });
+
+    //show equipment:id
+    app.get('/equipments/:id', function(req, res) {
+        Equipment.findById(req.params.id, function(err, eq) {
+            if(err) return res.json(err);
+            res.json(eq);
+        });
+    });
+
+    //create new equipment
+    app.post('/equipments', function(req, res) {
+        Equipment.create(req.body, function(err, eq) {
+            if(err) return res.json(err);
+            res.json(eq);
+        });
+    });
+
+    //update equipment:id
+    app.put('/equipments/:id', function(req, res) {
+        Equipment.findByIdAndUpdate(req.params.id, req.body, function(err, eq) {
+            if(err) res.json(err);
+            res.json(eq);
+        });
+    });
+
+    //delete equipment:id
+    app.delete('/equipments/"id', function(req, res) {
+        Equipment.findByIdAndRemove(req.params.id, req.body, function(err, eq) {
+            if(err) res.json(err);
+            res.json(eq);
+        });
     });
 
     app.get('*', function(req, res) {
