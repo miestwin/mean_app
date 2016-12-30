@@ -12,7 +12,9 @@ module.exports = function(app, dirname) {
     });
 
     app.get('/cars', function(req, res) {
-        Car.find(function(err, cars) {
+        Car.find({})
+            .populate("equipment")
+            .exec(function(err, cars) {
             if(err) res.send(err);
             res.json(cars);
         });
@@ -86,7 +88,7 @@ module.exports = function(app, dirname) {
     app.delete('/equipments/"id', function(req, res) {
         Equipment.findByIdAndRemove(req.params.id, req.body, function(err, eq) {
             if(err) res.json(err);
-            res.json(eq);
+            res.json({ response: [], status: "OK" });
         });
     });
 
