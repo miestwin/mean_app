@@ -35,24 +35,24 @@ module.exports = function(app, dirname) {
     //create new car
     app.post('/cars', function(req, res) {
         Car.create(req.body, function(err, car) {
-            if(err) res.json({ message: 'ERROR'});
-            res.json({ message: 'OK' });
+            if(err) res.json({ status: 'ERROR'});
+            res.json({ status: 'OK' });
         });
     });
 
     //update car:id
     app.put('/cars/:id', function(req, res) {
         Car.findByIdAndUpdate(req.params.id, req.body, function(err, car) {
-            if(err) res.json({ message: 'ERROR'});
-            res.json({ message: 'OK' });
+            if(err) res.json({ status: 'ERROR'});
+            res.json({ status: 'OK' });
         });
     });
 
     //delete car:id
     app.delete('/cars/"id', function(req, res) {
         Car.findByIdAndRemove(req.params.id, req.body, function(err, car) {
-            if(err) res.json({ message: 'ERROR'});
-            res.json({ message: 'OK'});
+            if(err) res.json({ status: 'ERROR'});
+            res.json({ status: 'OK'});
         });
     });
 
@@ -75,30 +75,29 @@ module.exports = function(app, dirname) {
     //create new equipment
     app.post('/equipments', function(req, res) {
         Equipment.create(req.body, function(err, eq) {
-            if(err) return res.json({ message: 'ERROR'});
-            res.json({ message: 'OK'});
+            if(err) return res.json({ status: 'ERROR'});
+            res.json({ status: 'OK'});
         });
     });
 
     //update equipment:id
     app.put('/equipments/:id', function(req, res) {
         Equipment.findByIdAndUpdate(req.params.id, req.body, function(err, eq) {
-            if(err) res.json({ message: 'ERROR'});
-            res.json({ message: 'OK'});
+            if(err) res.json({ status: 'ERROR'});
+            res.json({ status: 'OK'});
         });
     });
 
     //delete equipment:id
     app.delete('/equipments/"id', function(req, res) {
         Equipment.findByIdAndRemove(req.params.id, req.body, function(err, eq) {
-            if(err) res.json({ message: 'ERROR'});
-            res.json({ message: 'OK' });
+            if(err) res.json({ status: 'ERROR'});
+            res.json({ status: 'OK' });
         });
     });
 
-    //TODO send 404 file
     app.get('*', function(req, res) {
-        res.sendFile('public/views/index.html', { root: dirname});
+        res.sendFile('public/views/404.html', { root: dirname});
     });
 
 };
