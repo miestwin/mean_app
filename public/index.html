@@ -6,34 +6,41 @@
 
         <title>MEAN Single Page Application</title>
 
-        <link rel="stylesheet" type="text/css" href="./libs/normalize.css">
-        <link rel="stylesheet" type="text/css" href="./libs/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="libs/normalize.css">
+        <link rel="stylesheet" type="text/css" href="libs/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
 
         <!-- JS -->
-        <script src="./libs/angular.min.js"></script>
-        <script src="./libs/angular-route.min.js"></script>
+        <script src="libs/angular.min.js"></script>
+        <script src="libs/angular-route.min.js"></script>
+
+        <script src="js/controllers/car.controller.js"></script>
+        <script src="js/controllers/equipment.controller.js"></script>
+        <script src="js/services/car.service.js"></script>
+        <script src="js/service/equipment.service.js"></script>
+        <script src="js/appRoutes.js"></script>
+        <script src="js/app.js"></script>
     </head>
-    <body>
+    <body ng-app="MEANApp" ng-controller="CarController">
 
         <!-- HEADER -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
 
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="#">MEAN App</a>
+                    <a class="navbar-brand" href="/cars">MEAN App</a>
                 </div>
 
                 <!-- LINK TO PAGES -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Cars</a></li>
-                    <li><a href="#">Equipments</a></li>
+                    <li class="active"><a href="/cars">Cars</a></li>
+                    <li><a href="/equipments">Equipments</a></li>
                 </ul>
 
             </div>
         </nav>
 
-        <div></div>
+        <div ng-view></div>
 
     </body>
 </html>
