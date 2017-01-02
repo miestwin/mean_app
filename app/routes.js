@@ -4,14 +4,14 @@ var Car = require('./models/car.server.model'),
 module.exports = function(app, dirname) {
 
     //list cars
-    app.get('/', function(req, res) {
+    /*app.get('/', function(req, res) {
         Car.find({})
             .populate("equipment")
             .exec(function(err, cars) {
                 if(err) res.send({ response: [], status: 'ERROR'});
                 res.json({ response: cars, status: 'OK' });
         });
-    });
+    });*/
 
     app.get('/cars', function(req, res) {
         Car.find({})
@@ -97,7 +97,7 @@ module.exports = function(app, dirname) {
     });
 
     app.get('*', function(req, res) {
-        res.sendFile('public/views/404.html', { root: dirname});
+        res.sendFile('public/index.html', { root: dirname});
     });
 
 };
