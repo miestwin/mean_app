@@ -3,22 +3,12 @@ var Car = require('./models/car.server.model'),
 
 module.exports = function(app, dirname) {
 
-    //list cars
-    /*app.get('/', function(req, res) {
-        Car.find({})
-            .populate("equipment")
-            .exec(function(err, cars) {
-                if(err) res.send({ response: [], status: 'ERROR'});
-                res.json({ response: cars, status: 'OK' });
-        });
-    });*/
-
     app.get('/cars', function(req, res) {
         Car.find({})
             .populate("equipment")
             .exec(function(err, cars) {
-                if(err) res.send({ response: [], status: 'ERROR'});
-                res.json({ response: cars, status: 'OK' });
+                if(err) res.send([]);
+                res.json(cars);
         });
     });
 
@@ -27,8 +17,8 @@ module.exports = function(app, dirname) {
         Car.findById(req.params.id)
             .populate("equipment")
             .exec(function(err, car) {
-                if(err) res.json({ response: [], status: 'ERROR'});
-                res.json({ response: car, status: 'OK' });
+                if(err) res.json([]);
+                res.json(car);
         });
     });
 
@@ -59,16 +49,16 @@ module.exports = function(app, dirname) {
     //list equipments
     app.get('/equipments', function(req, res) {
         Equipment.find(function(err, eq) {
-            if(err) res.send({ response: [], status: 'ERROR'});
-            res.json({ response: eq, status: 'OK'});
+            if(err) res.send([]);
+            res.json(eq);
         });
     });
 
     //show equipment:id
     app.get('/equipments/:id', function(req, res) {
         Equipment.findById(req.params.id, function(err, eq) {
-            if(err) return res.json({ response: [], status: 'ERROR'});
-            res.json({ response: eq, status: 'OK'});
+            if(err) return res.json([]);
+            res.json(eq);
         });
     });
 

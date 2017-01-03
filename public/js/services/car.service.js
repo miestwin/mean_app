@@ -1,6 +1,6 @@
-angular.module('CarService', []).factory('Car', ['$http', function($http) {
+angular.module('CarService', []).factory('Cars', ['$http', function($http) {
     return {
-        get : function() {
+        get: function() {
             return $http.get('/cars');
         }
     };

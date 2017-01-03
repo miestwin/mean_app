@@ -1,3 +1,7 @@
+table th {
+    text-align: center;
+}
+
 .jumbotron {
     height: 100vh;
     margin: 0;
