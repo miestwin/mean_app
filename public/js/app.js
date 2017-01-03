@@ -1,1 +1,1 @@
-angular.module('MEANApp', ['ngRoute', 'appRoutes', 'CarCtrl', 'EquipmentCtrl,', 'CarService', 'EquipmentService']);
+angular.module('MEANApp', ['ngRoute', 'appRoutes', 'CarCtrl', 'EquipmentCtrl', 'CarService', 'EquipmentService']);
