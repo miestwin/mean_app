@@ -1,8 +1,54 @@
-table th {
+body {
+    padding-top: 90px;
+}
+
+table th, td {
     text-align: center;
+}
+
+input[type=checkbox] {
+    margin: 0;
+}
+
+label {
+    margin: 0;
 }
 
 .jumbotron {
     height: 100vh;
     margin: 0;
+}
+
+.filters {
+    padding: 5px 30px 5px;
+    width: 220px;
+    border: 1px solid #DBE3E7;
+    border-radius: 3px;
+    box-shadow: 1px 3px 1px rgba(0,0,0,0.08);
+    position: fixed;
+    text-align: left;
+}
+
+.filter-criteria {
+    display: block;
+    margin: 10px 0;
+}
+
+.filters span {
+    display: block;
+    font-weight: bold;
+    margin: 20px 0 12px 0;
+}
+
+.filters label {
+    display: block;
+    font-weight: 500;
+}
+
+.filters label input {
+    margin-right: 10px;
+}
+
+.items-table {
+    margin-left: 250px;
 }

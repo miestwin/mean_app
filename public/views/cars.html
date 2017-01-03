@@ -1,8 +1,61 @@
-<div class="jumbotron text-center">
-    <h1>Cars Home Page</h1>
-    <div class="container">
+<div class="container">
+    <div class="filters">
+        <div class="filter-criteria">
+            <span>Brand</span>
+            <label>
+                <input type="checkbox">
+                Audi
+            </label>
+            <label>
+                <input type="checkbox">
+                BMW
+            </label>
+            <label>
+                <input type="checkbox">
+                Volkswagen
+            </label>
+            <label>
+                <input type="checkbox">
+                Fiat
+            </label>
+        </div>
+        <div class="filter-criteria">
+            <span>Car body</span>
+            <label>
+                <input type="checkbox">
+                Van
+            </label>
+            <label>
+                <input type="checkbox">
+                Coupe
+            </label>
+            <label>
+                <input type="checkbox">
+                Limousine
+            </label>
+        </div>
+        <div class="filter-criteria">
+            <span>Engine</span>
+            <label>
+                <input type="range">
+                0 - < 10
+            </label>
+        </div>
+        <div class="filter-criteria">
+            <span>Course</span>
+            <label>
+                <input type="range">
+                0 - < 300000
+            </label>
+        </div>
+        <div class="filter-criteria">
+            <span>Date of production</span>
+            <input type="date">
+        </div>
+    </div>
+    <div class="items-table">
         <div class="table-responsive">
-            <table class="table table-striped table-hover">
+            <table class="table table-hover">
                 <thead class="text-center">
                     <tr>
                         <th>Brand</th>
