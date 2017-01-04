@@ -1,15 +1,15 @@
 angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'views/cars.html',
-            controller: 'CarController'
+            templateUrl: 'views/cars-list.html',
+            controller: 'CarListController'
         })
         .when('/cars', {
-            templateUrl: 'views/cars.html',
-            controller: 'CarController'
+            templateUrl: 'views/cars-list.html',
+            controller: 'CarListController'
         })
         .when('/equipments', {
-            templateUrl: 'views/equipments.html',
+            templateUrl: 'views/equipments-list.html',
             controller: 'EquipmentController'
         })
         .otherwise({
