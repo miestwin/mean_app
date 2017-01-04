@@ -10,13 +10,14 @@ angular.module('CarListCtrl', [])
         });
     }
 
-    $scope.deleteCar = function deleteCar(index) {
+    $scope.deleteCar = function deleteCar(event, index) {
         var car = $scope.cars[index];
         CarFactory.deleteCar(car._id).then(function (response) {
             $scope.cars.splice(index, 1);
         }).catch(function(response) {
             console.log(response);
         });
+        event.stopPropagation();
     }
 
     $scope.showCar = function showCar(index) {

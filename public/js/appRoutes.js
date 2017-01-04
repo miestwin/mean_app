@@ -14,7 +14,7 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
         })
         .when('/equipments', {
             templateUrl: 'views/equipments-list.html',
-            controller: 'EquipmentController'
+            controller: 'EquipmentListController'
         })
         .otherwise({
             templateUrl: 'views/404.html'

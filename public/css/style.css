@@ -64,3 +64,29 @@ label {
 .items-table {
     margin-left: 250px;
 }
+
+.flex-container {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.item-container {
+    flex: 4;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #DBE3E7;
+    border-radius: 3px;
+    box-shadow: 1px 3px 1px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+
+.item-container:hover {
+    background-color: rgba(0,0,0,0.03);
+}
+
+.item-container span {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 10px;
+}

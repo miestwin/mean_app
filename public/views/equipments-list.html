@@ -1,4 +1,8 @@
-<div class="jumbotron text-center">
-    <h1>Equipments Home Page</h1>
-    <p>{{ tagline }}</p>
+<div class="container" ng-controller="EquipmentListController">
+    <div class="flex-container">
+        <div class="item-container" ng-repeat="eq in equipments">
+            <span>{{ eq.name }}</span>
+            <p>{{ eq.description }}</p>
+        </div>
+    </div>
 </div>

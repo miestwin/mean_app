@@ -1,7 +1,9 @@
-angular.module('EquipmentService', []).factory('Equipment', ['$http', function($http) {
-    return {
-        get : function() {
-            return $http.get('/equipments');
-        }
+angular.module('EquipmentService', []).factory('EquipmentFactory', ['$http', function($http) {
+    var EquipmentDataOp = {};
+
+    EquipmentDataOp.getEquipments = function() {
+        return $http.get('/equipments');
     };
+    
+    return EquipmentDataOp;
 }]);
