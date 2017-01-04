@@ -23,4 +23,8 @@ angular.module('CarListCtrl', [])
         var car = $scope.cars[index];
         $location.path('/car/' + car._id);
     };
+
+    $scope.createCar = function createCar() {
+
+    };
 }]);
