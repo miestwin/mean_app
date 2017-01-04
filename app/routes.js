@@ -39,7 +39,7 @@ module.exports = function(app, dirname) {
     });
 
     //delete car:id
-    app.delete('/cars/"id', function(req, res) {
+    app.delete('/cars/:id', function(req, res) {
         Car.findByIdAndRemove(req.params.id, req.body, function(err, car) {
             if(err) res.json({ status: 'ERROR'});
             res.json({ status: 'OK'});
@@ -79,7 +79,7 @@ module.exports = function(app, dirname) {
     });
 
     //delete equipment:id
-    app.delete('/equipments/"id', function(req, res) {
+    app.delete('/equipments/:id', function(req, res) {
         Equipment.findByIdAndRemove(req.params.id, req.body, function(err, eq) {
             if(err) res.json({ status: 'ERROR'});
             res.json({ status: 'OK' });

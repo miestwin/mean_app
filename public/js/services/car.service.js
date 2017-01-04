@@ -5,5 +5,13 @@ angular.module('CarService', []).factory('CarFactory', ['$http', function($http)
         return $http.get('/cars');
     };
 
+    CarDataOp.deleteCar = function(param) {
+        return $http.delete('/cars/' + param);
+    };
+
+    CarDataOp.showCar = function(param) {
+        return $http.get('/cars/' + param);
+    }
+
     return CarDataOp;
 }]);

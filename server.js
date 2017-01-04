@@ -10,7 +10,9 @@ mongoose.Promise = global.Promise;
 
 var port = process.env.PORT || 8080;
 
-mongoose.connect(database.url);
+mongoose.connect(database.url)
+    .then(() =>  console.log('Connection succesful'))
+    .catch((err) => console.error(err));
 
 app.use(express.static(__dirname + '/public'));
 app.use(morgan('dev'));
