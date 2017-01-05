@@ -10,4 +10,13 @@ angular.module('EquipmentListCtrl', [])
         });
     }
 
+    $scope.createNewEquipment = function createNewEquipment() {
+        $location.path('/equipment/new');
+    };
+
+    $scope.showEquipment = function showEquipment(index) {
+        var eq = $scope.equipments[index];
+        $location.path('/equipment/' + eq._id);
+    };
+
 }]);

@@ -16,6 +16,14 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             templateUrl: 'views/equipments-list.html',
             controller: 'EquipmentListController'
         })
+        .when('/equipment/new', {
+            templateUrl: 'views/equipment-create.html',
+            controller: 'EquipmentCreateController'
+        })
+        .when('/equipment/:id', {
+            templateUrl: 'views/equipment-detail.html',
+            controller: 'EquipmentDetailController'
+        })
         .otherwise({
             templateUrl: 'views/404.html'
         });
