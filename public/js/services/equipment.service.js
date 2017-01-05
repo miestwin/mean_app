@@ -16,6 +16,10 @@ angular.module('EquipmentService', []).factory('EquipmentFactory', ['$http', fun
     EquipmentDataOp.showEquipment = function(param) {
         return $http.get('/equipments/' + param);
     };
+
+    EquipmentDataOp.deleteEquipment = function(param) {
+        return $http.delete('/equipments/' + param);
+    };
     
     return EquipmentDataOp;
 }]);

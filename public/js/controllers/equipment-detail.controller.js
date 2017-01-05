@@ -22,4 +22,12 @@ angular.module('EquipmentDetailCtrl', [])
         });
     };
 
+    $scope.deleteEquipment = function deleteEquipment() {
+        EquipmentFactory.deleteEquipment($scope.eq._id).then(function(response) {
+            $location.path('/equipments');
+        }).catch(function(response) {
+            console.log(response);
+        });
+    };
+
 }]);
