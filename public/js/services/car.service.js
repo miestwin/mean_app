@@ -11,7 +11,11 @@ angular.module('CarService', []).factory('CarFactory', ['$http', function($http)
 
     CarDataOp.showCar = function(param) {
         return $http.get('/cars/' + param);
-    }
+    };
+
+    CarDataOp.createCar = function(param) {
+        return $http.post('/cars', param);
+    };
 
     return CarDataOp;
 }]);
