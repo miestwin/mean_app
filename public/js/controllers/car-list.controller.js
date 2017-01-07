@@ -26,7 +26,7 @@ angular.module('CarListCtrl', [])
     };
 
     $scope.createCar = function createCar() {
-        //$location.path('/car/new');
+        $location.path('/car/new');
     };
 
 }]);

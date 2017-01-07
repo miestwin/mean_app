@@ -8,13 +8,13 @@ angular.module('appRoutes', []).config(['$routeProvider', '$locationProvider', f
             templateUrl: 'views/cars-list.html',
             controller: 'CarListController'
         })
-        .when('/car/:id', {
-            templateUrl: 'views/car-detail.html',
-            controller: 'CarDetailController'
-        })
         .when('/car/new', {
             templateUrl: 'views/car-create.html',
             controller: 'CarCreateController'
+        })
+        .when('/car/:id', {
+            templateUrl: 'views/car-detail.html',
+            controller: 'CarDetailController'
         })
         .when('/equipments', {
             templateUrl: 'views/equipments-list.html',

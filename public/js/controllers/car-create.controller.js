@@ -1,5 +1,7 @@
 angular.module('CarCreateCtrl', [])
-.controller('CarCreateController', ['$scope', '$location', 'CarFactory', function($scope, $location, CarFactory) {
+.controller('CarCreateController', ['$scope', '$location', 'CarFactory', 'EquipmentFactory', function($scope, $location, CarFactory, EquipmentFactory) {
+
+    showEquipments();
 
     $scope.create = function create() {
         CarFactory.createCar($scope.car).then(function(response) {
@@ -8,5 +10,13 @@ angular.module('CarCreateCtrl', [])
             console.log(response);
         });
     };
+
+    function showEquipments() {
+        EquipmentFactory.getEquipments().then(function(response) {
+            $scope.equipments = response.data;
+        }).catch(function(response) {
+            console.log(response);
+        });
+    }
 
 }]);

@@ -100,3 +100,70 @@ label {
 .container > a.btn {
     margin-left: 10px;
 }
+
+.group-container {
+    display: flex;
+    margin: 0 15px;
+}
+
+.group-container > select {
+    width: 200px;
+    margin: 0 15px;
+}
+
+.tag-input-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.title {
+    padding: 5px 15px;
+    background-color: #e1e1e1;
+    border: 1px solid #a8a8a8;
+    border-right: none;
+    border-radius: 5px 0 0 5px;
+}
+
+.tags-container {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 1px solid #a8a8a8;
+    border-radius: 0 5px 5px 0;
+    padding: 5px 15px 0 10px;
+}
+
+.tag {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    background-color: #e1e1e1;
+    border: 1px solid #d3d3d3;
+    padding: 2px 5px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    cursor: context-menu;
+}
+
+.tag:hover {
+    border-color: #858585;
+}
+
+.tag > span {
+    margin-right: 4px;
+}
+
+.remove {
+    color: #8a8a8a;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.remove:hover {
+    color: #5c5c5c;
+}
