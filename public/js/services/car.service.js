@@ -17,5 +17,9 @@ angular.module('CarService', []).factory('CarFactory', ['$http', function($http)
         return $http.post('/cars', param);
     };
 
+    CarDataOp.updateCar = function(param) {
+        return $http.put('/cars/' + param._id, param);
+    };
+
     return CarDataOp;
 }]);

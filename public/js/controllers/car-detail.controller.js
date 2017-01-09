@@ -1,5 +1,5 @@
 angular.module('CarDetailCtrl', [])
-.controller('CarDetailController', ['$scope', '$routeParams', 'CarFactory', 'EquipmentFactory', function($scope, $routeParams, CarFactory, EquipmentFactory) {
+.controller('CarDetailController', ['$scope', '$routeParams', '$location', 'CarFactory', 'EquipmentFactory', function($scope, $routeParams, $location, CarFactory, EquipmentFactory) {
 
     showCar();
     showEquipments();
@@ -28,6 +28,22 @@ angular.module('CarDetailCtrl', [])
 
     $scope.addTheEquipmentToTheCar = function addTheEquipmentToTheCar() {
         $scope.car.equipment.push($scope.eq);
+    };
+
+    $scope.update = function update() {
+        var car = $scope.car;
+        car.engine = Number(car.engine);
+        var eq = car.equipment.map(item => item._id);
+        car.equipment = eq;
+        CarFactory.updateCar(car).then(function(response) {
+            $location.path('/cars');
+        }).catch(function(response) {
+            console.log(response);
+        });
+    };
+
+    $scope.create = function create() {
+        $location.path('/car/new');
     };
 
 }]);

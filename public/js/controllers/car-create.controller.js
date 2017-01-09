@@ -29,4 +29,16 @@ angular.module('CarCreateCtrl', [])
         $scope.car.equipment.push($scope.eq);
     };
 
+    $scope.create = function create() {
+        var car = $scope.car;
+        car.engine = Number(car.engine);
+        var eq = car.equipment.map(item => item._id);
+        car.equipment = eq;
+        CarFactory.createCar(car).then(function(response) {
+            $location.path('/cars');
+        }).catch(function(response) {
+            console.log(response);
+        });
+    };
+
 }]);
