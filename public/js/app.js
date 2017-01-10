@@ -1,1 +1,1 @@
-angular.module('MEANApp', ['ngRoute', 'appRoutes', 'CarService', 'EquipmentService', 'CarListCtrl', 'CarDetailCtrl', 'CarCreateCtrl','EquipmentListCtrl', 'EquipmentCreateCtrl', 'EquipmentDetailCtrl', 'CarCheckboxFilter']);
+angular.module('MEANApp', ['ngRoute', 'appRoutes', 'CarService', 'EquipmentService', 'CarListCtrl', 'CarDetailCtrl', 'CarCreateCtrl','EquipmentListCtrl', 'EquipmentCreateCtrl', 'EquipmentDetailCtrl', 'CarCheckboxFilter', 'CarRangeFilter']);
