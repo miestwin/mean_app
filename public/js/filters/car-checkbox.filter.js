@@ -1,6 +1,7 @@
-angular.module('CarBrandFilter',[])
-.filter('carBrandFilter', function() {
-    return function(items, types) {
+angular.module('CarCheckboxFilter',[])
+.filter('carCheckboxFilter', function() {
+    return function(items, types, name) {
+        
         var filtered = [];
         var values = [];
         
@@ -12,7 +13,7 @@ angular.module('CarBrandFilter',[])
 
         if(values.indexOf(true) !== -1) {
             angular.forEach(items, function(item) {
-                if(types[item.car_brand.toLowerCase()] === true) {
+                if(types[item[name].toLowerCase()] === true) {
                     filtered.push(item);
                 }
             });
