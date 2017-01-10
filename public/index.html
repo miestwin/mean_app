@@ -27,20 +27,20 @@
         <script src="js/appRoutes.js"></script>
         <script src="js/app.js"></script>
     </head>
-    <body>
+    <body ng-init="tab = 1">
 
         <!-- HEADER -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
 
                 <div class="navbar-header">
-                    <a class="navbar-brand" href="/cars">MEAN App</a>
+                    <a class="navbar-brand" href="/" ng-click="tab = 1">MEAN App</a>
                 </div>
 
                 <!-- LINK TO PAGES -->
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="/cars">Cars</a></li>
-                    <li><a href="/equipments">Equipments</a></li>
+                    <li ng-class="{active:tab===1}"><a href="/cars" ng-click="tab = 1">Cars</a></li>
+                    <li ng-class="{active:tab===2}"><a href="/equipments" ng-click="tab = 2">Equipments</a></li>
                 </ul>
 
             </div>
