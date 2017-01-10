@@ -14,7 +14,8 @@ angular.module('CarListCtrl', [])
         limousine: false
     };
 
-    $scope.engineRange = 10;
+    $scope.minEngineRange = 0;
+    $scope.maxEngineRange = 10;
 
     getCars();
     function getCars() {
