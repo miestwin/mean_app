@@ -52,6 +52,7 @@
             <table class="table table-hover">
                 <thead class="text-center">
                     <tr>
+                        <th>#</th>
                         <th>Brand</th>
                         <th>Model</th>
                         <th>Body</th>
@@ -64,6 +65,7 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="car in cars | carCheckboxFilter:brandTypes:'car_brand' | carCheckboxFilter:bodyTypes:'car_body' | carRangeFilter:minEngineRange:maxEngineRange:'engine'" ng-click="showCar($index)">
+                        <th>{{ $index + 1 }}</th>
                         <td>{{ car.car_brand  }}</td>
                         <td>{{ car.car_model }}</td>
                         <td>{{ car.car_body }}</td>
