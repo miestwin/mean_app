@@ -70,7 +70,7 @@
                         <td>{{ car.engine }}</td>
                         <td>{{ car.color }}</td>
                         <td>{{ car.course }}</td>
-                        <td>{{ car.data_of_production }}</td>
+                        <td>{{ car.data_of_production | date: "yyyy-MM-dd" }}</td>
                         <td>
                             <a class="btn btn-danger" ng-click="deleteCar($event, $index)">X</a>    
                         </td>

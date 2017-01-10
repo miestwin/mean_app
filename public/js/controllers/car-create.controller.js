@@ -26,12 +26,13 @@ angular.module('CarCreateCtrl', [])
     };
 
     $scope.addTheEquipmentToTheCar = function addTheEquipmentToTheCar() {
-        $scope.car.equipment.push($scope.eq);
+        if($scope.car.equipment.indexOf($scope.eq) === -1) {
+            $scope.car.equipment.push($scope.eq);
+        }
     };
 
     $scope.create = function create() {
         var car = $scope.car;
-        car.engine = Number(car.engine === "" ? 0 : car.engine);
         var eq = car.equipment.map(item => item._id);
         car.equipment = eq;
         CarFactory.createCar(car).then(function(response) {
