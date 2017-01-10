@@ -1,6 +1,19 @@
 angular.module('CarListCtrl', [])
 .controller('CarListController', ['$scope', '$location', 'CarFactory', function($scope, $location, CarFactory) {
     
+    $scope.brandTypes = {
+        audi: false,
+        bmw: false,
+        volkswagen: false,
+        fiat: false
+    };
+
+    $scope.bodyTypes = {
+        van: false,
+        coupe: false,
+        limousine: false
+    };
+
     getCars();
     function getCars() {
         CarFactory.getCars().then(function (response) {
