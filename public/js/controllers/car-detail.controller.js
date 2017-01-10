@@ -32,7 +32,7 @@ angular.module('CarDetailCtrl', [])
 
     $scope.update = function update() {
         var car = $scope.car;
-        car.engine = Number(car.engine);
+        car.engine = Number(car.engine === "" ? 0 : car.engine);
         var eq = car.equipment.map(item => item._id);
         car.equipment = eq;
         CarFactory.updateCar(car).then(function(response) {

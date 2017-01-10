@@ -1,7 +1,11 @@
 <div class="container" ng-controller="EquipmentListController">
     <a class="btn btn-success btn" ng-click="createNewEquipment()">Create new equipment</a>
+    <div class="input-group search-bar">
+        <span class="input-group-addon" id="basic-addon1">Search</span>
+        <input type="text" class="form-control" aria-describedby="basic-addon1" ng-model="searchText">
+    </div>
     <div class="flex-container">
-        <div class="item-container" ng-repeat="eq in equipments" ng-click="showEquipment($index)">
+        <div class="item-container" ng-repeat="eq in equipments | filter:searchText" ng-click="showEquipment($index)">
             <span>{{ eq.name }}</span>
             <p>{{ eq.description }}</p>
         </div>

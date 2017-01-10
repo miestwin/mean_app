@@ -31,7 +31,7 @@ angular.module('CarCreateCtrl', [])
 
     $scope.create = function create() {
         var car = $scope.car;
-        car.engine = Number(car.engine);
+        car.engine = Number(car.engine === "" ? 0 : car.engine);
         var eq = car.equipment.map(item => item._id);
         car.equipment = eq;
         CarFactory.createCar(car).then(function(response) {

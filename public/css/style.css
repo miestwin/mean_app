@@ -77,7 +77,7 @@ label {
 }
 
 .item-container {
-    flex: 1;
+    width: 200px;
     position: relative;
     margin: 10px;
     padding: 10px;
@@ -166,4 +166,8 @@ label {
 
 .remove:hover {
     color: #5c5c5c;
+}
+
+.search-bar {
+    margin: 10px;
 }

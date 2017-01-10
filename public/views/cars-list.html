@@ -63,7 +63,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="car in cars | carCheckboxFilter:brandTypes:'car_brand' | carCheckboxFilter:bodyTypes:'car_body' | carRangeFilter:minEngineRange:maxEngineRange:'engine' | orderBy: 'course'" ng-click="showCar($index)">
+                    <tr ng-repeat="car in cars | carCheckboxFilter:brandTypes:'car_brand' | carCheckboxFilter:bodyTypes:'car_body' | carRangeFilter:minEngineRange:maxEngineRange:'engine'" ng-click="showCar($index)">
                         <td>{{ car.car_brand  }}</td>
                         <td>{{ car.car_model }}</td>
                         <td>{{ car.car_body }}</td>
