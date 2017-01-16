@@ -6,7 +6,9 @@ angular.module('CarDetailCtrl', [])
 
     function showCar() {
         CarFactory.showCar($routeParams.id).then(function(response) {
-            $scope.car = response.data;
+            var car = response.data;
+            car.data_of_production = new Date(car.data_of_production);
+            $scope.car = car;
         }).catch(function(response) {
             console.log(response);
         });
@@ -34,6 +36,7 @@ angular.module('CarDetailCtrl', [])
 
     $scope.update = function update() {
         var car = $scope.car;
+        car.data_of_production = car.data_of_production || new Date(Date.now());
         var eq = car.equipment.map(item => item._id);
         car.equipment = eq;
         CarFactory.updateCar(car).then(function(response) {
