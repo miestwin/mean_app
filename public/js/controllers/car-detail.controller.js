@@ -10,6 +10,7 @@ angular.module('CarDetailCtrl', [])
             car.data_of_production = new Date(car.data_of_production);
             $scope.car = car;
         }).catch(function(response) {
+            $location.path('/go-to-the-error');
             console.log(response);
         });
     }
@@ -43,6 +44,7 @@ angular.module('CarDetailCtrl', [])
         CarFactory.updateCar(car).then(function(response) {
             $location.path('/cars');
         }).catch(function(response) {
+            $location.path('/go-to-the-error');
             console.log(response);
         });
     };

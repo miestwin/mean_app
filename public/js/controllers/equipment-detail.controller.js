@@ -6,6 +6,7 @@ angular.module('EquipmentDetailCtrl', [])
         EquipmentFactory.showEquipment($routeParams.id).then(function(response) {
             $scope.eq = response.data;
         }).catch(function(response) {
+            $location.path('/go-to-the-error');
             console.log(response);
         });
     }
@@ -18,6 +19,7 @@ angular.module('EquipmentDetailCtrl', [])
         EquipmentFactory.updateEquipment($scope.eq).then(function(response) {
             $location.path('/equipments');
         }).catch(function(response) {
+            $location.path('/go-to-the-error');
             console.log(response);
         });
     };

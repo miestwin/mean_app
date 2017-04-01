@@ -25,9 +25,10 @@ angular.module('CarCreateCtrl', [])
         $scope.car.equipment.splice(index, 1);
     };
 
-    $scope.addTheEquipmentToTheCar = function addTheEquipmentToTheCar() {
+    $scope.addTheEquipmentToTheCar = function addTheEquipmentToTheCar(event) {
         if($scope.car.equipment.indexOf($scope.eq) === -1) {
             $scope.car.equipment.push($scope.eq);
+            event.preventDefault();
         }
     };
 
